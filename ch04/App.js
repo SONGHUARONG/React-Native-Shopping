@@ -6,37 +6,51 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+import React, {
+  Component
+} from 'react';
 import {
-  View
- 
+  View,
+  Platform
+
 } from 'react-native';
 
-import { Navigator } from 'react-native-deprecated-custom-components';
+import {
+  Navigator
+} from 'react-native-deprecated-custom-components';
 
-import Home from './Home';
+import Home from './home';
+
+import Main from './main';
 
 export default class App extends Component {
 
-  render(){
-    return(<Navigator
-      initialRoute={
-        {
-          name:'Home',
-          component:Home
+  render() {
+    return (< Navigator initialRoute={
+      {
+        // name: 'home',
+        // component: Home
+        name: 'main',
+        component: Main
+      }
+    }
+      configureScene={
+        (route) => {
+          return Navigator.SceneConfigs.FloatFromRight;
         }
       }
-      configureScene={(route)=>{
-        return Navigator.SceneConfigs.FloatFromRight;
-      }}
-      renderScene={(route,navigator)=>{
-        const Component = route.component;
-        return <Component {...route.params} navigator={navigator}/>
-      }}
-      
-      />);
+      renderScene={
+        (route, navigator) => {
+          const Component = route.component;
+          return <Component {...route.params}
+            navigator={
+              navigator
+            }
+          />
+        }
+      }
+
+    />);
   }
-  
+
 }
-
-

@@ -25,7 +25,7 @@ import {
 
 } from 'react-native';
 
-import detail from './detail';
+import Detail from './detail';
 
 const ds = new ListView.DataSource({
   rowHasChanged: (r1, r2) => r1 !== r2
@@ -218,7 +218,7 @@ export default class Home extends Component {
         const {navigator} = this.props;
         if(navigator)
         {
-          navigator.push({name:'detail',component:detail,params:{
+          navigator.push({name:'detail',component:Detail,params:{
             productTitle:rowData.title
           }});
         }

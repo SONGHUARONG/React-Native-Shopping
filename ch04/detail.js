@@ -4,7 +4,7 @@ import {
  
 } from 'react-native';
 
-export default class detail extends Component {
+export default class Detail extends Component {
 
   render(){
     return(<View style={styles.container}>
