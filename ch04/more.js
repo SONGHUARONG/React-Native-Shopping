@@ -91,8 +91,8 @@ const styles = StyleSheet.create({
         height:200
     },
     web:{
-        height:200,
-        width:200
+        height:Dimensions.get('window').height,
+        width:Dimensions.get('window').width
     }
 
 });
